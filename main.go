@@ -10,8 +10,8 @@ import (
 func main() {
 
 	configuration := sumo.NewConfiguration()
-	configuration.Host = "api.us2.sumologic.com"
-	//configuration.Debug = true
+	configuration.Host = os.Getenv("SUMOLOGIC_HOST")
+	configuration.Debug = true
 	client := sumo.NewAPIClient(configuration)
 
 	accessId := os.Getenv("SUMOLOGIC_ID")
